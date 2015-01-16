@@ -1,0 +1,74 @@
+body {
+	max-width: 300px;
+	margin: 100px auto 50px;
+	position: relative;
+}
+#help {
+	width: 25px;
+	height: 25px;
+	border-radius: 13px;
+	background-color: blue;
+	color: white;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 25px;
+	font-size: 19px;
+	position: absolute;
+	right: 0;
+	top: -45px;
+}
+#up {
+	cursor: pointer;
+	height: 25px;
+}
+#files {
+	border-bottom: 1px solid black;
+}
+#files:empty::before {
+	display: block;
+	content: "No files found";
+}
+.file:not(.history), .file.history + .file.history, .file.dir + .file.history {
+	border-top: 1px solid black;
+	padding-top: 10px;
+	height: 25px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-right: 2em;
+	position: relative;
+}
+.file.dir {
+	cursor: pointer;
+}
+.file:not(.history):not(.dir) + .file.history {
+	position: absolute;
+	right: 0;
+	margin-top: -25px;
+	color: transparent;
+	width: 1em;
+	height: 1em;
+}
+.file.history + .file.history, .file.dir + .file.history {
+	color: red;
+}
+.file:not(.history):not(.dir) + .file.history::before, .file.history + .file.history::after, .file.dir + .file.history::after {
+	display: inline;
+	content: "\A0\A0\A0\A0\A0";
+	background: url("history-small.png") no-repeat;
+	position: absolute;
+	right: 0;
+	width: 1em;
+	height: 1em;
+}
+.restore {
+	position: absolute;
+	right: 0;
+	margin-top: -25px;
+	cursor: pointer;
+}
+.restore::before {
+	content: "Restore";
+}

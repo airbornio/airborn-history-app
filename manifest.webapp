@@ -1,0 +1,21 @@
+{
+	"name": "File History",
+	"description": "View file history",
+	"developer": {
+		"name": "Daniel Huigens",
+		"url": "http://airborn.io"
+	},
+	"icons": {
+		"16": "history-small.png",
+		"64": "history.png"
+	},
+	"launch_path": "/history.html",
+	"permissions": {
+		"device-storage:sdcard": {
+			"access": "readwrite"
+		},
+		"device-storage-history:sdcard": {
+			"access": "readonly"
+		}
+	}
+}
